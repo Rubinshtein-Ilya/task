@@ -1,0 +1,127 @@
+.nav {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right, #1c1c1c, #555454);
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+
+    &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        
+    }
+
+    &__item {
+        cursor: pointer;
+        transition: all .2s linear;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+        
+    }
+
+    &__link {
+        color: rgb(185, 184, 184);
+        
+    }
+}
+.burger-btn {
+    display: none;
+    width: 50px;
+    height: 37px;
+    position: fixed;
+    right: 80px;
+    top: 31px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    & span {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0px;
+            transform-origin: left center;
+        }
+        &:nth-child(2) {
+            top: 16px;
+            transform-origin: left center;
+        }
+        &:nth-child(3) {
+            top: 32px;
+            transform-origin: left center;
+        }
+    }
+
+    &.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: -2px;
+        left: 6px;
+    }
+    &.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 33px;
+        left: 6px;
+    }
+}
+
+.active {
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .burger-btn {
+        display: block;
+    }
+
+    .nav {
+        transition: .25s ease-in-out;
+
+        &.nav-open {
+            height: 100vh;
+        }
+        
+        
+        &__list {
+            height: 0;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly; 
+            transition: .25s ease-in-out; 
+            
+            &.nav-open {
+                height: 100vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .burger-btn {
+        right: 30px;
+    }
+}
+
