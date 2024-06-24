@@ -1,0 +1,120 @@
+#todo {
+    padding: 80px 0;
+}
+.todo-wrapper {
+    padding: 60px 20px;
+}
+
+.todo-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+
+		&__input {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px 15px;
+            width: 60%;
+		}
+
+		&__btn {
+            padding: 10px 20px;
+            background-image: linear-gradient(to right, #3d3c3c, #555454);
+            color: white;
+            border-radius: 10px;
+            transition: all .3s;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+		}
+}
+.validation-errors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    &__error {
+        color: red;
+    }
+}
+
+.todo-list {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__item {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+    }
+
+    &__descr {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: 60%;
+    }
+
+    &__btns-box {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+    }
+
+    & button {
+        border-radius: 10px;
+        padding: 10px 15px;
+        color: white;
+        transition: all .3s;
+        max-height: 51px;
+        max-width: 130px;
+
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    &__done-btn {
+        background-color: green;
+    }
+
+    &__delete-btn {
+        background-color: red;
+    }
+}
+
+.done {
+    background-color: green;
+    color: white;
+}
+
+
+@media (max-width: 1050px) {
+    .todo-form {
+        flex-direction: column;
+        align-items: center;
+
+        &__input {
+            width: 80%;
+        }
+    }
+    .todo-list__item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-list__descr {
+        width: 80%;
+    }
+
+    .validation-errors {
+        align-items: center;
+    }
+}
+ 
